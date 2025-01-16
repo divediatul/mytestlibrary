@@ -2,6 +2,7 @@
 // import ReactDOM from 'react-dom/client';
 // import './index.css';
 import App from './App';
+import fetchDataForSSR from "./api";
 // import reportWebVitals from './reportWebVitals';
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,3 +18,6 @@ import App from './App';
 // reportWebVitals();
 
 export default App;
+export {
+  fetchDataForSSR
+}
