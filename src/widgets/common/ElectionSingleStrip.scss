@@ -1,0 +1,329 @@
+@mixin font-size($i) {
+  font-size: $i * 0.0625rem;
+}
+
+.d-flex {
+  display: flex;
+}
+
+@mixin flex-direction($proprty) {
+  flex-direction: $proprty;
+}
+
+@mixin justifi-content($alginment) {
+  justify-content: $alginment;
+}
+
+@mixin align-items($alignitems) {
+  align-items: $alignitems;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.election_city_result {
+  border-radius: 8px;
+
+  .tnn_grid_short {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr 1fr;
+    gap: 0px 1px;
+    border-radius: 8px;
+    overflow: hidden;
+
+    &.itemCount-5 {
+      grid-template-columns: 162px 1fr 1fr 1fr;
+
+      .party {
+        padding: 10px;
+      }
+    }
+
+    .final_result {
+      @include flex-direction(column);
+      font-size: 0.875rem;
+      padding: 6px 14px 6px 8px;
+      background-color: var(--tnnRed);
+      min-width: 100%;
+      text-align: center;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &.bg-blue-color {
+        background-color: var(--BgNavTab);
+      }
+
+      .city_result {
+        @extend .d-flex;
+        @include justifi-content(center);
+        @include align-items(center);
+        text-transform: uppercase;
+        color: var(--white-color);
+        font-weight: bold;
+        min-height: 30px;
+        border-bottom: 1px dotted rgba(var(--dotted-border-color), 0.5) !important;
+        border-right: 0px;
+        margin-bottom: 3px;
+        font-size: 0.875rem;
+        padding-bottom: 6px;
+      }
+
+      .outoff_result {
+        line-height: 1.6;
+        margin: 0px;
+
+        span {
+          display: block;
+          @include font-size(12);
+          color: var(--white-color);
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .bg-green-color {
+      background-color: var(--BgColorElection);
+    }
+  }
+
+  .tnn_grid_full {
+    display: grid;
+    grid-template-columns: 550px 1fr 1fr 1fr;
+    border-radius: 8px;
+    overflow: hidden;
+    gap: 0px 1px;
+
+    .final_result {
+      text-align: center;
+      padding: 12px;
+      background-color: var(--tnnRed);
+      @extend .d-flex;
+      @include justifi-content(left);
+      @include align-items(center);
+      @include flex-direction(row);
+      background-repeat: no-repeat;
+      background-size: auto 78px;
+      background-position: center right 80px;
+
+      .city_result {
+        border-right: 1px dotted rgba(var(--dotted-border-color), 0.5);
+        border-bottom: 0px;
+        padding-right: 25px;
+        color: var(--white-color);
+        font-size: 1.25rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        width: 200px;
+        min-height: 50px;
+        @extend .d-flex;
+        @include justifi-content(center);
+        @include align-items(center);
+      }
+
+      .outoff_result {
+        margin-left: 45px;
+        max-width: 80px;
+        line-height: 1.4;
+
+        span {
+          display: block;
+          @include font-size(12);
+          color: var(--white-color);
+          text-transform: uppercase;
+
+          &:last-child {
+            @include font-size(10);
+          }
+        }
+      }
+    }
+
+    .bg-green-color {
+      background-color: var(--BgColorElection);
+    }
+
+    .bg-blue-color {
+      background-color: var(--BgNavTab);
+    }
+
+    .bjp,
+    .mnf,
+    .inc,
+    .aap,
+    .brs,
+    .oth,
+    .cong {
+      align-items: flex-start;
+
+      .result_totle {
+        span {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .bjp {
+    background-image: linear-gradient(to bottom, #ffc238, #f97d07);
+  }
+
+  .mnf {
+    background-image: linear-gradient(to bottom, #2196f3, #0e78cc);
+  }
+
+  .ink,
+  .cong {
+    background-image: linear-gradient(to bottom, #7ec2e8, #488fcd);
+  }
+
+  .aap {
+    background-image: linear-gradient(to bottom, #00abda, #0073b3);
+  }
+
+  .brs {
+    background-image: linear-gradient(to bottom, #f84797, #d02a75);
+  }
+
+  .jjp {
+    background-image: linear-gradient(to bottom, #ffff00, #baba31);
+  }
+
+  .jknc {
+    background-image: linear-gradient(to bottom, #f54242, #ff0000);
+  }
+
+  .jkpdp {
+    background-image: linear-gradient(to bottom, #1e4c06, #143105);
+  }
+
+  .oth {
+    background-image: linear-gradient(to bottom, #818181, #4a4a4a);
+  }
+
+  .jmm {
+    background-image: linear-gradient(to bottom, #297d59, #065f39);
+  }
+
+  .party {
+    padding: 12px;
+    @extend .d-flex;
+    @include justifi-content(center);
+    @include align-items(center);
+    @include flex-direction(column);
+
+    .city_result {
+      @include font-size(12);
+      font-weight: bold;
+      color: var(--white-color);
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.37);
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .result_totle {
+      span {
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.37);
+        font-size: 1.875rem;
+        color: var(--white-color);
+        display: block;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .win-lead {
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.37);
+        font-size: 0.625rem;
+        color: var(--white-color);
+        font-weight: normal;
+        margin-top: 3px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.tnn_grid_short,
+.tnn_grid_full {
+  line-height: 1;
+  position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .election_city_result {
+
+    .tnn_grid_short,
+    .tnn_grid_full {
+      grid-template-columns: 120px 1fr 1fr 1fr;
+
+      &.itemCount-5 {
+        grid-template-columns: 120px 1fr 1fr 1fr;
+
+        >div {
+          &:nth-child(5)~div {
+            display: none;
+          }
+        }
+      }
+
+      .final_result {
+        padding-right: 6px;
+        padding-left: 6px;
+        @include flex-direction(column);
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        @include justifi-content(center);
+
+        .city_result {
+          @include font-size(10);
+          min-height: auto;
+          border-color: #b4b4b4;
+          word-break: break-word;
+          border-bottom: 1px dotted rgba(var(--dotted-border-color), 0.5);
+          border-right: 0px;
+          padding-bottom: 8px;
+          margin-bottom: 8px;
+          padding-right: 0px;
+          width: auto;
+        }
+
+        .outoff_result {
+          margin-left: 0px;
+
+          span {
+            @include font-size(8);
+          }
+        }
+      }
+
+      .party {
+        padding: 6px 8px;
+        align-items: center;
+
+        .city_result {
+          @include font-size(10);
+        }
+
+        .result_totle {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          span {
+            @include font-size(16);
+            margin-top: 5px;
+            text-align: center;
+          }
+
+          .win-lead {
+            line-height: 1.4;
+            @include font-size(8);
+          }
+        }
+      }
+    }
+  }
+}

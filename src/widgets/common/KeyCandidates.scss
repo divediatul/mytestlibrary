@@ -1,0 +1,218 @@
+@import './src/styles/common/helpers/_mixins-new';
+
+.key-candidates {
+  width: 100%;
+  display: block;
+  flex: 1;
+  position: relative;
+  @include no-mobile {
+    overflow: hidden;
+  }
+  > div {
+    overflow: visible;
+  }
+  h2 {
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--textColor);
+    @include mobile {
+      margin-bottom: 6px;
+    }
+  }
+  @include no-mobile {
+    &.slider {
+      :global {
+        .slick-slider {
+          border-radius: 8px 0 0 8px;
+          // &:after {
+          //   position: absolute;
+          //   content: '';
+          //   background-image: linear-gradient(
+          //     to right,
+          //     rgba(0, 0, 0, 0) 0%,
+          //     #000 100%
+          //   );
+          //   width: 50px;
+          //   height: 100%;
+          //   right: 0;
+          //   top: 0;
+          // }
+          .slick-list {
+            background: var(--bgGray);
+          }
+          .slick-arrow {
+            right: 2px;
+            height: 24px;
+            width: 24px;
+            &:before {
+              position: absolute;
+              content: '';
+              border: solid #fff;
+              border-width: 0 1px 1px 0;
+              width: 9px;
+              height: 9px;
+              transform: rotate(-45deg);
+              top: 7px;
+              z-index: 3;
+              background: no-repeat;
+              left: 6px;
+            }
+            &:after {
+              background: none !important;
+              background: #21409a !important;
+              border-radius: 50%;
+              height: inherit;
+              width: inherit;
+              filter: none;
+            }
+            &.slick-prev,
+            &.slick-next {
+              top: -17px;
+            }
+            &.slick-prev {
+              left: auto;
+              right: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.full-width {
+  .candidate {
+    background: var(--textWhite);
+  }
+  @include no-mobile {
+    &.slider {
+      :global {
+        .slick-slider {
+          .slick-list {
+            background: var(--textWhite);
+          }
+        }
+      }
+    }
+  }
+}
+@include no-mobile {
+  .tabWrapper {
+    position: absolute;
+    // right: 70px;
+    left: 190px;
+    top: 0;
+    button + button {
+      margin-left: 10px;
+    }
+  }
+}
+@include mobile {
+  .tabWrapper {
+    margin-bottom: 8px;
+    display: flex;
+    gap: 0 10px;
+  }
+}
+
+.candidate {
+  display: flex;
+  flex: 0 0 250px;
+  align-items: center;
+  width: 250px;
+  gap: 10px;
+  background: var(--bgGray);
+  position: relative;
+  padding: 6px 10px 6px 26px;
+  border-right: 1px solid #979797;
+  border-radius: 8px 0 0 8px;
+}
+.status {
+  line-height: 16px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0 2px;
+  position: absolute;
+  height: 16px;
+  width: 65px;
+  top: 24px;
+  border-radius: 8px 8px 0 0;
+  text-align: center;
+  transform: rotate(-90deg);
+  left: -24px;
+  &.won {
+    background: #007e00;
+  }
+  &.lost {
+    background: #ee0000;
+  }
+  &.awaited {
+    background: #686868;
+  }
+}
+.image,
+.image img {
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  object-fit: cover;
+  object-position: top;
+  aspect-ratio: 1/1;
+}
+.details {
+  flex: 1;
+  h5,
+  p {
+    font-size: 12px;
+    line-height: 14px;
+    white-space: normal;
+  }
+  h5 {
+    margin-bottom: 7px;
+    @include lineClamp(2);
+  }
+  p {
+    @include lineClamp(1);
+    max-width: 75%;
+  }
+}
+
+.partyLogo {
+  flex: 0 0 36px;
+  text-align: center;
+  .logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1/1;
+  }
+  img {
+    aspect-ratio: inherit;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  span {
+    font-size: 12px;
+    line-height: 17px;
+    display: block;
+  }
+}
+
+@include mobile {
+  .key-candidates {
+    margin: 14px 0;
+  }
+  .candidate {
+    margin-right: 12px;
+    flex: 0 0 90%;
+    width: 90%;
+    img {
+      max-width: 100%;
+    }
+  }
+}

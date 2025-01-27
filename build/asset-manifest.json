@@ -1,13 +1,12 @@
 {
   "files": {
+    "main.scss": "/style.scss",
     "main.js": "/index.js",
-    "main.css": "/static/css/main.782fa8ae.css",
     "index.html": "/index.html",
-    "index.js.map": "/index.js.map",
-    "main.782fa8ae.css.map": "/static/css/main.782fa8ae.css.map"
+    "index.js.map": "/index.js.map"
   },
   "entrypoints": [
-    "index.js",
-    "static/css/main.782fa8ae.css"
+    "style.scss",
+    "index.js"
   ]
 }

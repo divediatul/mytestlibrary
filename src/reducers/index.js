@@ -1,8 +1,6 @@
 import { combineReducers } from 'redux'
-import todos from './todos'
-import counter from './counter'
+import tally from './tally'
 
 export default combineReducers({
-  todos,
-  counter
+  tally
 })
